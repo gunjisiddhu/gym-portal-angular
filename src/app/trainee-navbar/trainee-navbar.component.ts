@@ -29,6 +29,7 @@ export class TraineeNavbarComponent {
 
   closeSession() {
     console.log(this.traineeProfile.firstName);
+    localStorage.clear();
     this.router.navigate(['']);
   }
 

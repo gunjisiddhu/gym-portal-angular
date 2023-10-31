@@ -70,7 +70,7 @@ export class TrainerProfileUpdateComponent {
       trainerProfileUpdate.active = formValues.active;
 
       this.trainerService.updateTrainerProfile(trainerProfileUpdate).subscribe({
-        next:(value:any)=>{
+        next: (value: any) => {
           if (value.errorMessage) {
             this.snackBar.open("Error Updating Profile", "Try Again");
           } else {
@@ -86,7 +86,7 @@ export class TrainerProfileUpdateComponent {
           }
 
         },
-        error:(error:any) => {
+        error: (error: any) => {
           console.log(error);
           this.snackBar.open("Error Retrieving Data", "Try Again");
         }

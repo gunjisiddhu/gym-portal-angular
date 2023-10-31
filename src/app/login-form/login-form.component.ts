@@ -6,7 +6,7 @@ import {UserService} from '../service/UserService';
 import {TrainerProfile} from "../models/TrainerProfile";
 import {TraineeProfile} from "../models/TraineeProfile";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {LanguageService} from "../service/language.service";
+import {GuardService} from "../service/GuardService";
 
 @Component({
   selector: 'app-login-form',
@@ -17,7 +17,8 @@ export class LoginFormComponent {
   loginForm: any;
   selectedUserType: string = 'trainee'; // Default to 'trainee'
 
-  constructor(private router: Router, private userService: UserService, private snackBar: MatSnackBar, private langService: LanguageService) {
+  constructor(private router: Router, private userService: UserService, private snackBar: MatSnackBar, private guardService: GuardService) {
+    localStorage.clear();
     this.loginForm = new FormGroup({
       username: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
@@ -42,7 +43,7 @@ export class LoginFormComponent {
       this.userService.loginTrainee(credential).subscribe({
         next: (value: any) => {
           if (value.errorMessage) {
-            console.log("Received Error Message");
+            console.log("Received Error Message" + value.errorMessage);
             this.snackBar.open(value.errorMessage, "Retry");
           } else {
             let traineeProfile: TraineeProfile = value;
@@ -74,10 +75,12 @@ export class LoginFormComponent {
   }
 
   navigateToMyAccount(profile: TraineeProfile) {
+    this.guardService.setUserRole(2);
     this.router.navigate(['myAccount'], {state: {profile}});
   }
 
   navigateToTrainerAccount(profile: TrainerProfile) {
+    this.guardService.setUserRole(1);
     this.router.navigate(['trainerAccount'], {state: {profile}});
   }
 }

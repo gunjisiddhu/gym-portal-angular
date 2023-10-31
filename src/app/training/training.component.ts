@@ -67,7 +67,7 @@ export class TrainingComponent {
     training.date = formatDate(this.trainingForm.value.trainingDate, 'yyyy-MM-dd', 'en');
 
     this.trainingService.addTraining(training).subscribe({
-      next:(value:any)=>{
+      next: (value: any) => {
         console.log("Added Data Successfully");
         if (value) {
           this.snackBar.open("Error Uploading Training, Check and Try Again", "Retry");
@@ -75,7 +75,7 @@ export class TrainingComponent {
           this.snackBar.open("Training Added Successfully!", "Ok");
         }
       },
-      error:(error:any)=>{
+      error: (error: any) => {
         console.log(error);
         this.snackBar.open("Error Uploading Training, Check and Try Again", "Retry");
       }

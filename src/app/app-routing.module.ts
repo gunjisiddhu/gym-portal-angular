@@ -14,6 +14,8 @@ import {TrainingComponent} from "./training/training.component";
 import {TrainingsDisplayComponent} from "./trainings-display/trainings-display.component";
 import {TrainerProfileUpdateComponent} from "./trainer-profile-update/trainer-profile-update.component";
 import {HomeComponent} from "./home/home.component";
+import {traineeGuard} from "./shared/trainee.guard";
+import {trainerGuard} from "./shared/trainer.guard";
 
 const routes: Routes = [
   {
@@ -23,7 +25,7 @@ const routes: Routes = [
   },
   {
     path: "home",
-    component: HomeComponent
+    component: HomeComponent,
   }, {
     path: "signIn",
     component: LoginFormComponent
@@ -42,19 +44,22 @@ const routes: Routes = [
   },
   {
     path: "traineeRegistration",
-    component: TraineeRegistrationComponent
+    component: TraineeRegistrationComponent,
   },
   {
     path: "myAccount",
-    component: MyaccountStudentprofileComponent
+    component: MyaccountStudentprofileComponent,
+    canActivate: [traineeGuard]
   },
   {
     path: "trainerAccount",
-    component: MyaccountTrainerprofileComponent
+    component: MyaccountTrainerprofileComponent,
+    canActivate: [trainerGuard]
   },
   {
     path: "editTraineeProfile",
-    component: UpdateTraineeProfileComponent
+    component: UpdateTraineeProfileComponent,
+    canActivate: [traineeGuard]
   },
   {
     path: "changePassword",
@@ -62,11 +67,13 @@ const routes: Routes = [
   },
   {
     path: "editTrainersList",
-    component: EditTrainersListComponent
+    component: EditTrainersListComponent,
+    canActivate: [traineeGuard]
   },
   {
     path: "addTraining",
-    component: TrainingComponent
+    component: TrainingComponent,
+    canActivate: [trainerGuard]
   },
   {
     path: "trainingDisplay",
@@ -74,11 +81,13 @@ const routes: Routes = [
   },
   {
     path: "updateTraineeProfile",
-    component: UpdateTraineeProfileComponent
+    component: UpdateTraineeProfileComponent,
+    canActivate: [traineeGuard]
   },
   {
     path: "updateTrainerProfile",
-    component: TrainerProfileUpdateComponent
+    component: TrainerProfileUpdateComponent,
+    canActivate: [trainerGuard]
   }
 
 ];

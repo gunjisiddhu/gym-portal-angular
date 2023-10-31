@@ -20,12 +20,12 @@ export class TraineeRegistrationComponent {
 
   onSubmit() {
     this.traineeService.saveTrainee(this.trainee).subscribe({
-      next:(value:any)=> {
+      next: (value: any) => {
         this.dialog.open(DialogBoxComponent, {
           data: {username: value.username, password: value.password}
         });
       },
-      error:(error:any)=>{
+      error: (error: any) => {
 
       }
     });

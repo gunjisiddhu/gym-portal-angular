@@ -112,7 +112,7 @@ export class TraineeTrainingRequestBoxComponent {
 
 
     this.traineeService.getTrainings(traineeTrainings).subscribe({
-      next:(value:any) => {
+      next: (value: any) => {
         console.log(value);
         if (value.errorMessage) {
           this.snackBar.open("Please Check Inputs and try Again!", "Ok");
@@ -129,10 +129,10 @@ export class TraineeTrainingRequestBoxComponent {
             this.snackBar.open("No Training Records found", "Ok");
         }
       },
-      error:(error:any) => {
+      error: (error: any) => {
         console.log(error);
         this.snackBar.open("Error Retrieving Data", "Ok");
-    }
+      }
     })
 
   }

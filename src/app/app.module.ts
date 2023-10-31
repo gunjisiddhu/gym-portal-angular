@@ -48,7 +48,7 @@ import {TrainerProfileUpdateComponent} from './trainer-profile-update/trainer-pr
 import {TraineeNavbarComponent} from './trainee-navbar/trainee-navbar.component';
 import {TrainerNavbarComponent} from './trainer-navbar/trainer-navbar.component';
 import {HomeComponent} from './home/home.component';
-import {MatPaginator, MatPaginatorModule} from "@angular/material/paginator";
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 @NgModule({
   declarations: [

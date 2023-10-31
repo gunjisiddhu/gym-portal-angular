@@ -9,50 +9,50 @@
     <h2>Update Trainers List for {{traineeFirstName}}</h2>
   </div>
   <div class="table-container">
-  <table [dataSource]="dataSource" class="mat-elevation-z8" mat-table>
+    <table [dataSource]="dataSource" class="mat-elevation-z8" mat-table>
 
-    <!-- Checkbox Column -->
-    <ng-container matColumnDef="select">
-      <th *matHeaderCellDef mat-header-cell>
-        <mat-checkbox (change)="$event ? toggleAllRows() : null"
-                      [aria-label]="checkboxLabel()"
-                      [checked]="selection.hasValue() && isAllSelected()"
-                      [indeterminate]="selection.hasValue() && !isAllSelected()">
-        </mat-checkbox>
-      </th>
-      <td *matCellDef="let row" mat-cell>
-        <mat-checkbox (change)="$event ? selection.toggle(row) : null"
-                      (click)="$event.stopPropagation()"
-                      [aria-label]="checkboxLabel(row)"
-                      [checked]="selection.isSelected(row)">
-        </mat-checkbox>
-      </td>
-    </ng-container>
+      <!-- Checkbox Column -->
+      <ng-container matColumnDef="select">
+        <th *matHeaderCellDef mat-header-cell>
+          <mat-checkbox (change)="$event ? toggleAllRows() : null"
+                        [aria-label]="checkboxLabel()"
+                        [checked]="selection.hasValue() && isAllSelected()"
+                        [indeterminate]="selection.hasValue() && !isAllSelected()">
+          </mat-checkbox>
+        </th>
+        <td *matCellDef="let row" mat-cell>
+          <mat-checkbox (change)="$event ? selection.toggle(row) : null"
+                        (click)="$event.stopPropagation()"
+                        [aria-label]="checkboxLabel(row)"
+                        [checked]="selection.isSelected(row)">
+          </mat-checkbox>
+        </td>
+      </ng-container>
 
-    <!-- Position Column -->
-    <ng-container matColumnDef="username">
-      <th *matHeaderCellDef mat-header-cell> No.</th>
-      <td *matCellDef="let element" mat-cell> {{element.username}} </td>
-    </ng-container>
+      <!-- Position Column -->
+      <ng-container matColumnDef="username">
+        <th *matHeaderCellDef mat-header-cell> No.</th>
+        <td *matCellDef="let element" mat-cell> {{element.username}} </td>
+      </ng-container>
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="firstName">
-      <th *matHeaderCellDef mat-header-cell> Name</th>
-      <td *matCellDef="let element" mat-cell> {{element.firstName}} </td>
-    </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="firstName">
+        <th *matHeaderCellDef mat-header-cell> Name</th>
+        <td *matCellDef="let element" mat-cell> {{element.firstName}} </td>
+      </ng-container>
 
-    <!-- Weight Column -->
-    <ng-container matColumnDef="specialization">
-      <th *matHeaderCellDef mat-header-cell> Weight</th>
-      <td *matCellDef="let element" mat-cell> {{element.specialization}} </td>
-    </ng-container>
+      <!-- Weight Column -->
+      <ng-container matColumnDef="specialization">
+        <th *matHeaderCellDef mat-header-cell> Weight</th>
+        <td *matCellDef="let element" mat-cell> {{element.specialization}} </td>
+      </ng-container>
 
 
-    <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
-    <tr (click)="selection.toggle(row)" *matRowDef="let row; columns: displayedColumns;"
-        mat-row>
-    </tr>
-  </table>
+      <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+      <tr (click)="selection.toggle(row)" *matRowDef="let row; columns: displayedColumns;"
+          mat-row>
+      </tr>
+    </table>
 
   </div>
   <div class="button-container">

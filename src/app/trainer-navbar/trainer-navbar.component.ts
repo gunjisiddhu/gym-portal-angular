@@ -32,6 +32,7 @@ export class TrainerNavbarComponent {
   }
 
   closeSession() {
+    localStorage.clear();
     this.router.navigate(['']);
   }
 }

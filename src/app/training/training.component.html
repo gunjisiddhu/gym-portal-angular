@@ -54,7 +54,8 @@
         <mat-form-field>
           <mat-icon class="my-icon" matPrefix>today</mat-icon>
           <mat-label>Training Date</mat-label>
-          <input [matDatepicker]="picker" [value]="formatDate(trainingForm.get('trainingDate').value)" formControlName="trainingDate"
+          <input [matDatepicker]="picker" [value]="formatDate(trainingForm.get('trainingDate').value)"
+                 formControlName="trainingDate"
                  matInput name="trainingDate" required>
           <mat-datepicker-toggle [for]="picker" matSuffix></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
