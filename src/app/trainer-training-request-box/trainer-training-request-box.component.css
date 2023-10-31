@@ -1,0 +1,36 @@
+.dialog-container {
+  width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-field-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.mat-slide-toggle {
+  width: 20%;
+}
+
+.toggle {
+  margin-left: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}

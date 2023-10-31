@@ -1,0 +1,65 @@
+<app-trainee-navbar [traineeProfile]="traineeProfile"></app-trainee-navbar>
+<div class="container">
+  <div class="my-account">
+    <h1>My Account</h1>
+  </div>
+  <div class="student-profile">
+    <div class="my-profile">
+      <h4>My Profile</h4>
+      <div class="pfp-status">
+        <div class="student-image"><img alt="treadmill" height="48" ngSrc="https://img.icons8.com/color/48/treadmill.png"
+                                        width="48"/>
+        </div>
+        <div class="student-status">
+          <h4>Status</h4>
+          <h5 [ngClass]="{'active': traineeProfile.active, 'inactive': !traineeProfile.active}">
+            {{ traineeProfile.active ? 'Active' : 'Inactive' }}
+          </h5>
+        </div>
+      </div>
+      <div class="student-details">
+        <h3>First Name</h3>
+        <h5>{{traineeProfile.firstName}}</h5>
+        <h3>Last Name</h3>
+        <h5>{{traineeProfile.lastName}}</h5>
+        <h3>User Name</h3>
+        <h5>{{traineeProfile.email}}</h5>
+        <h3>Date of Birth</h3>
+        <h5>{{traineeProfile.dateOfBirth | date}}</h5>
+        <h3>Address</h3>
+        <h5>{{traineeProfile.address}}</h5>
+        <h3>Email</h3>
+        <h5>{{traineeProfile.email}}</h5>
+        <div>
+          <button (click)="editTraineeProfile()" color="primary" mat-raised-button>Edit profile</button>&nbsp;&nbsp;
+          <button color="accent" mat-raised-button routerLink="/changePassword">Change Password</button>
+        </div>
+      </div>
+    </div>
+    <div class="my-trainers">
+      <div class="my-trainers-header">
+        <h2>My Trainers</h2>
+        <button (click)="editTrainers()" color="primary" mat-raised-button>add trainer</button>
+      </div>
+      <div class="trainers-table">
+        <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Name</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.firstName}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="specialization">
+            <mat-header-cell *matHeaderCellDef> Specialization</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.specialization}} </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+      </div>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,70 @@
+<app-trainer-navbar [trainerProfile]="trainerProfile"></app-trainer-navbar>
+<div class="container">
+  <div class="my-account">
+    <h1>My Account</h1>
+  </div>
+  <div class="student-profile">
+    <div class="my-profile">
+      <h4>My Profile</h4>
+      <div class="pfp-status">
+        <div class="student-image">
+          <img alt="personal-trainer" height="64" src="https://img.icons8.com/arcade/64/personal-trainer.png"
+               width="64"/>
+        </div>
+        <div class="student-status">
+          <h4>Status</h4>
+          <h5 [ngClass]="{'active': trainerProfile.active, 'inactive': !trainerProfile.active}">
+            {{ trainerProfile.active ? 'Active' : 'Inactive' }}
+          </h5>
+        </div>
+      </div>
+      <div class="student-details">
+        <h3>First Name</h3>
+        <h5>{{trainerProfile.firstName}}</h5>
+        <h3>Last Name</h3>
+        <h5>{{trainerProfile.lastName}}</h5>
+        <h3>User Name</h3>
+        <h5>{{trainerProfile.username}}</h5>
+        <h3>Specialization</h3>
+        <h5>{{trainerProfile.specialization}}</h5>
+        <h3>Email</h3>
+        <h5>{{trainerProfile.email}}</h5>
+        <div>
+          <button (click)="editTrainerProfile()" color="primary" mat-raised-button>Edit profile</button>&nbsp;&nbsp;
+          <button color="accent" mat-raised-button routerLink="/changePassword">Change Password</button>
+        </div>
+      </div>
+    </div>
+    <div class="my-trainers">
+      <div class="my-trainers-header">
+        <h2>My Trainees</h2>
+      </div>
+      <div class="trainers-table">
+        <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+          <ng-container matColumnDef="username">
+            <mat-header-cell *matHeaderCellDef> username</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.username}} </mat-cell>
+          </ng-container>
+
+
+          <ng-container matColumnDef="firstname">
+            <mat-header-cell *matHeaderCellDef> firstname</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.firstName}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="lastname">
+            <mat-header-cell *matHeaderCellDef> lastname</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.lastName}} </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+

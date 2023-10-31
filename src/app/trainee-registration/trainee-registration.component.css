@@ -1,0 +1,76 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 5%;
+}
+
+.header {
+  flex: 1;
+  transform: translateX(13%);
+}
+
+.header h1 {
+  font-family: Poppins, monospace;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 68px;
+  color: #171A1FFF;
+  margin-bottom: 0;
+}
+
+.image-registrationdetails {
+  flex: 3;
+  display: flex;
+  flex-direction: row;
+}
+
+.image {
+  flex: 1;
+  align-content: flex-end;
+}
+
+.registrationdetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 0;
+  padding-right: 10%;
+}
+
+.header h4 {
+  color: grey;
+}
+
+.image img {
+  width: 350px; /* Adjust the width if needed */
+  height: 500px; /* Adjust the height if needed */
+  border-radius: 12px;
+  transform: translate(50%, 1%);
+  margin-right: 0;
+}
+
+
+.registrationdetails button {
+  margin-top: 11%;
+}
+
+.registrationdetails label {
+  font-weight: bold;
+  color: dimgrey;
+}
+
+.registrationdetails mat-form-field {
+  width: 80%;
+}
+
+.registrationdetails button {
+  width: 80%
+}
+
+
+
+
+
+
+
+

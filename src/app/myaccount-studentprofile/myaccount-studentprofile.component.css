@@ -1,0 +1,140 @@
+.mat-mdc-table {
+  width: fit-content;
+  max-height: 500px;
+  overflow: auto;
+
+}
+
+.mat-column-name {
+  height: 100px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.my-account {
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+
+}
+
+.student-profile {
+  flex-direction: row;
+  display: flex;
+  flex: 4;
+  margin-bottom: 5%;
+}
+
+.my-trainings {
+  padding-left: 12%;
+  padding-right: 12%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 2;
+}
+
+.pfp-status {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 3%;
+  /*gap: 25px;*/
+}
+
+.student-status {
+  margin-left: 25px;
+}
+
+.student-status h4 {
+  margin-bottom: 1px;
+}
+
+.student-status h5 {
+  color: forestgreen;
+}
+
+.my-account, .my-profile, .my-trainers {
+  display: flex;
+  flex: 1;
+}
+
+.my-profile, .my-trainers {
+  flex-direction: column;
+  flex: 1;
+  align-items: flex-start;
+  margin-left: 5%;
+}
+
+.my-trainers-header {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.my-trainers-header h3 {
+  margin-right: 45px;
+}
+
+
+.my-trainings button {
+  width: 150px;
+  height: 42px;
+}
+
+h1, h4, h2 {
+  font-weight: bold;
+  color: black;
+}
+
+.my-trainers-header button {
+  margin-left: 150px;
+}
+
+h3 {
+  /*font-weight: bold;*/
+  color: grey;
+  margin-bottom: 1px;
+}
+
+.my-trainers-header h3 {
+  font-weight: bold;
+  color: black;
+}
+
+.trainers-table {
+  width: 60%;
+}
+
+.trainers-table mat-row, mat-cell {
+  height: 18px;
+  font-size: 12px;
+}
+
+.trainers-table {
+  width: 60%;
+}
+
+.my-trainings p {
+  margin-bottom: 50px;
+}
+
+.trainers-table mat-row,
+.trainers-table mat-cell {
+  height: 30px;
+  font-size: 14px;
+}
+
+.delete-profile button {
+  transform: translate(300%, 350%);
+}
+
+
+
+
+

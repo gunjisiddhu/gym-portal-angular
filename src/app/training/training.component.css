@@ -1,0 +1,66 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  flex: 1;
+}
+
+.header h1 {
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 68px;
+  color: #171A1FFF;
+  margin-bottom: 0;
+}
+
+.image-registrationdetails {
+  flex: 3;
+  display: flex;
+  flex-direction: row;
+}
+
+.image {
+  flex: 1;
+  align-content: flex-end;
+  margin-left: 25px;
+}
+
+.registrationdetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 0;
+  padding-left: 32%;
+  padding-right: 38%;
+}
+
+.header h4 {
+  color: grey;
+}
+
+.image img {
+  width: 350px;
+  height: 500px;
+  border-radius: 12px;
+  transform: translate(50%, 1%);
+  margin-right: 0;
+}
+
+.registrationdetails button {
+  margin-top: 7%;
+}
+
+.registrationdetails label {
+  font-weight: bold;
+  color: dimgrey;
+}
+
+.registrationdetails mat-form-field {
+  width: 100%;
+}
+
+.registrationdetails button {
+  width: 80%;
+}

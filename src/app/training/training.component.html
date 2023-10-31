@@ -1,0 +1,81 @@
+<app-trainer-navbar [trainerProfile]="trainerProfile"></app-trainer-navbar>
+<div class="container">
+  <div class="image-registrationdetails">
+    <div class="registrationdetails">
+      <div class="header">
+        <h1>Add Training</h1>
+      </div>
+
+      <form (ngSubmit)="onSubmit()" [formGroup]="trainingForm">
+
+        <label>Name of Trainer</label>
+        <mat-form-field>
+          <mat-icon class="my-icon" matPrefix>person</mat-icon>
+          <mat-label>Trainer's Name</mat-label>
+          <input formControlName="trainerUsername" matInput name="trainerUsername" style="color: black" type="text">
+          <div *ngIf="trainerUsername.touched && trainerUsername.invalid">
+            <div *ngIf="trainerUsername.errors?.required "> Trainer username is required...</div>
+          </div>
+        </mat-form-field>
+
+
+        <!--<label>Name of Trainee</label>
+        <mat-form-field>
+          <mat-icon matPrefix class="my-icon">person</mat-icon>
+          <mat-label>Trainees Name</mat-label>
+          <input matInput type="text" name="traineeUsername" formControlName="traineeUsername">
+          <div *ngIf="traineeUsername.touched && traineeUsername.invalid">
+            <div *ngIf="traineeUsername.errors?.required "> Trainee username is required...</div>
+          </div>
+        </mat-form-field>-->
+
+        <mat-form-field>
+          <mat-label>Trainees Name</mat-label>
+          <mat-select formControlName="traineeUsername">
+            <mat-option *ngFor="let trainee of trainerProfile.traineeList" [value]="trainee.username">
+              {{ trainee.username }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+        <label>Name of Training</label>
+        <mat-form-field>
+          <mat-icon class="my-icon" matPrefix>subtitles</mat-icon>
+          <mat-label>Training Name</mat-label>
+          <input formControlName="trainingName" matInput name="trainingName" type="text">
+          <div *ngIf="trainingName.touched && trainingName.invalid">
+            <div *ngIf="trainingName.errors?.required "> Training name is required...</div>
+          </div>
+        </mat-form-field>
+
+
+        <label>Date of Training</label>
+        <mat-form-field>
+          <mat-icon class="my-icon" matPrefix>today</mat-icon>
+          <mat-label>Training Date</mat-label>
+          <input [matDatepicker]="picker" [value]="formatDate(trainingForm.get('trainingDate').value)" formControlName="trainingDate"
+                 matInput name="trainingDate" required>
+          <mat-datepicker-toggle [for]="picker" matSuffix></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <label>Training Duration</label>
+        <mat-form-field>
+          <mat-icon class="my-icon" matPrefix>timer</mat-icon>
+          <mat-label>Training Duration (mins)</mat-label>
+          <input formControlName="trainingDuration" matInput name="trainingDuration" type="text">
+          <div *ngIf="trainingDuration.touched && trainingDuration.invalid">
+            <div *ngIf="trainingDuration.errors?.required "> Training name is required...</div>
+          </div>
+        </mat-form-field>
+
+
+        <button [disabled]="trainingForm.invalid" color="primary" mat-raised-button type="submit">Add Training</button>
+
+      </form>
+
+
+    </div>
+  </div>
+</div>

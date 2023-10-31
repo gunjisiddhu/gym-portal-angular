@@ -1,0 +1,15 @@
+.app-container {
+  height: 100vh;
+  max-height: 100vh;
+  position: relative;
+}
+
+router-outlet {
+  flex: 1;
+}
+
+app-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}

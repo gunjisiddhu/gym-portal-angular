@@ -1,0 +1,27 @@
+<div class="table-container">
+  <h2 class="mat-h2">Training Data of Trainee</h2>
+  <table [dataSource]="trainingData" class="mat-elevation-z8" mat-table>
+    <ng-container matColumnDef="trainerName">
+      <th *matHeaderCellDef mat-header-cell> Trainer Name</th>
+      <td *matCellDef="let element" mat-cell> {{ element.trainerName }} </td>
+    </ng-container>
+    <ng-container matColumnDef="traineeName">
+      <th *matHeaderCellDef mat-header-cell> Trainee Name</th>
+      <td *matCellDef="let element" mat-cell> {{ element.traineeName }} </td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <th *matHeaderCellDef mat-header-cell> Training Name</th>
+      <td *matCellDef="let element" mat-cell> {{ element.name }} </td>
+    </ng-container>
+    <ng-container matColumnDef="date">
+      <th *matHeaderCellDef mat-header-cell> Training Date</th>
+      <td *matCellDef="let element" mat-cell> {{ element.date | date}} </td>
+    </ng-container>
+    <ng-container matColumnDef="duration">
+      <th *matHeaderCellDef mat-header-cell> Duration (mins)</th>
+      <td *matCellDef="let element" mat-cell> {{ element.duration }} </td>
+    </ng-container>
+    <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+    <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+  </table>
+</div>

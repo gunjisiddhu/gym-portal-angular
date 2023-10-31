@@ -1,0 +1,55 @@
+<mat-dialog-content class="dialog-container">
+  <h2 class="mat-h2">Get Trainings for Trainee</h2>
+  <form (ngSubmit)="onSubmit()" [formGroup]="trainingForm" class="form-container">
+    <div class="form-field-container">
+      <mat-form-field>
+        <mat-icon class="my-icon" matPrefix>person</mat-icon>
+        <mat-label>Trainee Name</mat-label>
+        <input formControlName="traineeName" matInput type="text">
+      </mat-form-field>
+
+    </div>
+
+    <div class="form-field-container">
+      <mat-form-field>
+        <mat-label>Trainers</mat-label>
+        <mat-select formControlName="trainerName">
+          <mat-option *ngFor="let trainer of trainersList" [value]="trainer.username">
+            {{ trainer.firstName }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+      <mat-slide-toggle class="toggle" formControlName="trainerToggle"></mat-slide-toggle>
+    </div>
+
+    <div class="form-field-container">
+      <mat-form-field>
+        <mat-label>Enter a date range</mat-label>
+        <mat-date-range-input [rangePicker]="picker" formGroupName="range">
+          <input formControlName="start" matStartDate placeholder="Start date">
+          <input formControlName="end" matEndDate placeholder="End date">
+        </mat-date-range-input>
+        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle [for]="picker" matIconSuffix></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
+      <mat-slide-toggle class="toggle" formControlName="dateToggle"></mat-slide-toggle>
+    </div>
+
+    <div class="form-field-container">
+      <mat-form-field>
+        <mat-label>Training Type List</mat-label>
+        <mat-select formControlName="trainingType">
+          <mat-option *ngFor="let training of trainingList" [value]="training">
+            {{ training }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-slide-toggle class="toggle" formControlName="trainingToggle"></mat-slide-toggle>
+    </div>
+
+    <button color="primary" mat-dialog-close mat-raised-button type="submit">Get Trainings</button>
+  </form>
+</mat-dialog-content>

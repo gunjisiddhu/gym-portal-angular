@@ -1,0 +1,125 @@
+.bottom-container {
+  position: absolute;
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto;
+  background-color: #f2f2f2;
+}
+
+.bottom-first-row {
+  display: flex;
+  flex-direction: row;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 50px 50px 10px;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+}
+
+/*
+logo presentation
+ */
+.f1-c1 {
+  display: flex;
+  flex-direction: row;
+  width: 20%;
+  align-items: center;
+}
+
+.f1-c1 img {
+  max-width: 100%;
+}
+
+.f1-c1 p {
+  font-weight: bold;
+  font-size: 18px; /* Adjust the font size as needed */
+  top: 20%;
+  /* Remove default margin */
+  margin: 0 0 0 3%;
+}
+
+.f1-c2, .f1-c3, .f1-c4 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 10%;
+}
+
+.f1-c2 a, .f1-c3 a, .f1-c4 a {
+  text-decoration: none;
+}
+
+
+/*
+last column of first row
+ */
+.f1-c5 {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+
+}
+
+.f1-c5 a {
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.f1-c5 p {
+  font-size: 10px;
+}
+
+.f1-c5 form-container {
+  display: flex;
+  align-items: center;
+}
+
+.form-container input {
+  flex: 1;
+  margin-right: 10px; /* Add some spacing between the input and button */
+  width: auto;
+  height: 15px;
+}
+
+.form-container button {
+  height: 20px;
+  margin: 0;
+}
+
+
+/* Style the second row (horizontal rule) */
+.bottom-second-row {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Style the third row */
+.bottom-third-row {
+  display: flex;
+  background-color: #f2f2f2;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-media {
+  margin-left: 5%;
+}
+
+.form-group {
+  padding-left: 50px;
+  font-size: 10px;
+}
+
+.mat-select {
+  text-decoration: none;
+}
+
+.dot {
+  margin: 0 5px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+}

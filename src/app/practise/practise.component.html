@@ -1,0 +1,33 @@
+<!--<p>practise works!</p>-->
+<!--<p>{{postArray}}</p>-->
+<!--<div *ngIf=" postArray.length>0; then ifcondition else elsecondition"></div>-->
+<!--<ng-template #ifcondition>-->
+<!--  <ul>-->
+<!--    <li *ngFor="let  post of postArray">{{ post }}-->
+<!--      <button (click)="deleteitem(post)">deletepost</button>-->
+<!--    </li>-->
+<!--  </ul>-->
+<!--  <button (click)="additem()">addpost</button>-->
+<!--</ng-template>-->
+<!--<ng-template #elsecondition>-->
+<!--  <h1>no element to print</h1>-->
+<!--</ng-template>-->
+<div>
+  <input [(ngModel)]="username" placeholder="username" type="text">
+  <input [(ngModel)]="firstname" placeholder="firstname" type="text">
+  <input [(ngModel)]="lastname" placeholder="lastname" type="text">
+  <button (click)="formsubmit()">submit</button>
+</div>
+<table>
+  <tr *ngFor="let user of user; let index =index">
+    <td>{{index + 1}}</td>
+    <td>{{user.username}}</td>
+    <td>{{user.address}}</td>
+    <td>
+      <button (click)="deleteFormData(index)">Delete</button>
+    </td>
+  </tr>
+</table>
+
+
+

@@ -1,0 +1,40 @@
+<div class="container">
+  <h2>Updating Details of {{traineeProfile.firstName + " " + traineeProfile.lastName}}</h2>
+  <form (ngSubmit)="onSubmit()" [formGroup]="userForm">
+    <mat-form-field>
+      <mat-label>Username</mat-label>
+      <input formControlName="username" matInput type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>First Name</mat-label>
+      <input formControlName="firstName" matInput type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Last Name</mat-label>
+      <input formControlName="lastName" matInput type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input formControlName="email" matInput type="email">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Date of Birth</mat-label>
+      <input [matDatepicker]="picker" formControlName="dateOfBirth" matInput>
+      <mat-datepicker-toggle [for]="picker" matSuffix></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Address</mat-label>
+      <input formControlName="address" matInput type="text">
+    </mat-form-field>
+
+    <mat-slide-toggle formControlName="isActive">Is Active</mat-slide-toggle>
+
+    <button [disabled]="userForm.invalid" color="primary" mat-raised-button type="submit">Submit</button>
+  </form>
+</div>

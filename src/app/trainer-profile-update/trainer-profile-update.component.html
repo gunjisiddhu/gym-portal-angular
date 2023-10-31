@@ -1,0 +1,37 @@
+<div class="container">
+  <h2>Update Profile of {{trainerProfile.firstName + "  " + trainerProfile.lastName}}</h2>
+  <form (ngSubmit)="onSubmit()" [formGroup]="trainerForm">
+    <mat-form-field>
+      <mat-label>Username</mat-label>
+      <input formControlName="username" matInput type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>First Name</mat-label>
+      <input formControlName="firstName" matInput type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Last Name</mat-label>
+      <input formControlName="lastName" matInput type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input formControlName="email" matInput type="email">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Specialization</mat-label>
+      <mat-select formControlName="specializationId">
+        <mat-option *ngFor="let specialization of specializations" [value]="specialization.value">
+          {{ specialization.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-slide-toggle formControlName="active">Active</mat-slide-toggle>
+
+    <button [disabled]="trainerForm.invalid" color="primary" mat-raised-button type="submit">Update Profile</button>
+  </form>
+</div>

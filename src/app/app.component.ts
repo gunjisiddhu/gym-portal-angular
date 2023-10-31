@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  static baseUrls: string = 'http://localhost:8120';
   title = 'learn-portal';
+  private baseUrl = 'http://localhost:8120';
+
+  getBaseUrl(): string {
+    return this.baseUrl;
+  }
 }

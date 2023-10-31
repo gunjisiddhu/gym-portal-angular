@@ -1,0 +1,66 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 5%;
+  text-align: center;
+}
+
+.header {
+  text-align: center;
+}
+
+.header h1 {
+  font-family: Poppins, monospace;
+  font-size: 38px;
+  font-weight: 700;
+  color: #171A1FFF;
+  margin-bottom: 5px;
+}
+
+.header h4 {
+  font-weight: 400;
+  color: grey;
+  margin-bottom: 20px;
+}
+
+.image-registrationdetails {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.image {
+  flex: 1;
+  text-align: end;
+  margin-right: 20px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.image img {
+  max-width: 50%;
+  max-height: 50%;
+  border-radius: 12px;
+}
+
+.registrationdetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space between form fields */
+  margin-left: 0;
+  padding-right: 10%;
+}
+
+.form-group {
+  margin: 10px 0;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+button {
+  width: 100%;
+  margin-top: 15px;
+}

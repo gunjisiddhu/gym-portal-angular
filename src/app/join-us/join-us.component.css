@@ -1,0 +1,87 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  background-color: #f3f3f3;
+  animation: colorTransition 10s linear infinite;
+}
+
+@keyframes colorTransition {
+  0% {
+    background-color: #fdfdfd;
+  }
+  50% {
+    background-color: #b1defc;
+  }
+  100% {
+    background-color: #fdfdfd;
+  }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.join-us-content {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+}
+
+.join-us-as-trainer,
+.join-us-as-trainee {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 30px;
+  transition: background-color 0.3s;
+  margin: 20px;
+}
+
+.join-us-as-trainer:hover,
+.join-us-as-trainee:hover {
+  background-color: #f9f9f9;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text button {
+  width: 50%;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.text button:hover {
+  background-color: #3498DB;
+  color: #fff;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+h4 {
+  font-size: 20px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+body {
+  font-family: Poppins, Arial, sans-serif;
+}
