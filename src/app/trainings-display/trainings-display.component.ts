@@ -1,7 +1,6 @@
-import {Component, ViewChild} from '@angular/core';
+import {Component} from '@angular/core';
+
 import {TrainingDetails} from "../models/TrainingDetails";
-import {MatPaginator} from "@angular/material/paginator";
-import {MatTableDataSource} from "@angular/material/table";
 
 @Component({
   selector: 'app-trainings-display',
@@ -9,9 +8,7 @@ import {MatTableDataSource} from "@angular/material/table";
   styleUrls: ['./trainings-display.component.css']
 })
 export class TrainingsDisplayComponent {
-
   trainingData: TrainingDetails[] = [];
-
   displayedColumns: string[] = ['name', 'date', 'duration', 'trainerName', 'traineeName'];
   traineeProfile: any;
 

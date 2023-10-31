@@ -4,10 +4,11 @@
 </div>
 
 <div *ngIf="!loading">
+
   <div class="header">
     <h2>Update Trainers List for {{traineeFirstName}}</h2>
   </div>
-
+  <div class="table-container">
   <table [dataSource]="dataSource" class="mat-elevation-z8" mat-table>
 
     <!-- Checkbox Column -->
@@ -53,8 +54,10 @@
     </tr>
   </table>
 
-
+  </div>
   <div class="button-container">
     <button (click)="saveSelectedItems()" color="primary" mat-raised-button>Save List</button>
   </div>
+
+
 </div>

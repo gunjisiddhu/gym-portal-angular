@@ -27,3 +27,8 @@
   background: #ffffff; /* Background color on hover */
   color: #474af8; /* Text color on hover */
 }
+
+.table-container {
+  max-height: 75vh;
+  overflow: auto;
+}
