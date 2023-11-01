@@ -15,16 +15,12 @@ export class TraineeNavbarComponent {
 
   @Input() traineeProfile: any;
 
-  constructor(private route: ActivatedRoute, private router: Router, public dialog: MatDialog) {
+  constructor( private router: Router, public dialog: MatDialog) {
   }
-
-
   traineeTrainings() {
     this.dialog.open(TraineeTrainingRequestBoxComponent, {
       data: this.traineeProfile
     });
-
-
   }
 
   closeSession() {
@@ -32,7 +28,6 @@ export class TraineeNavbarComponent {
     localStorage.clear();
     this.router.navigate(['']);
   }
-
   openHome() {
     this.router.navigate(['myAccount'], {state: {profile: this.traineeProfile}});
   }

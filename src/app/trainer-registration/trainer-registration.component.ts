@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {TrainerRegistration} from "../trainer-registration";
+import {TrainerRegistration} from "../models/trainer-registration";
 import {TrainerService} from "../service/trainer.service";
 import {MatDialog} from "@angular/material/dialog";
 import {DialogBoxComponent} from "../dialog-box/dialog-box.component";

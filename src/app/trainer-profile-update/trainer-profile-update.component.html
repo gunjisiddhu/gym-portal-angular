@@ -23,7 +23,7 @@
 
     <mat-form-field>
       <mat-label>Specialization</mat-label>
-      <mat-select formControlName="specializationId">
+      <mat-select formControlName="specializationId" >
         <mat-option *ngFor="let specialization of specializations" [value]="specialization.value">
           {{ specialization.viewValue }}
         </mat-option>

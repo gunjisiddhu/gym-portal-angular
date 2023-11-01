@@ -25,7 +25,7 @@ export class TraineeTrainingRequestBoxComponent {
 
   traineeProfile: TraineeProfile = new TraineeProfile();
 
-  constructor(private fb: FormBuilder, @Inject(MAT_DIALOG_DATA) public data: any, private traineeService: TraineeService, private snackBar: MatSnackBar, private router: Router) {
+  constructor(private fb: FormBuilder, @Inject(MAT_DIALOG_DATA) public data: any, private traineeService: TraineeService, private snackBar: MatSnackBar, public router: Router) {
     this.traineeProfile = data;
     this.trainersList.push(...this.traineeProfile.trainersList);
 

@@ -24,6 +24,7 @@ export class MyaccountTrainerprofileComponent {
     const state = window.history.state;
     this.trainerProfile = state.profile;
     this.dataSource = [...this.trainerProfile.traineeList];
+
   }
 
 

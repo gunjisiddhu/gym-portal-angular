@@ -29,7 +29,7 @@ export class EditTrainersListComponent {
   loading = true;
   traineeFirstName: any;
 
-  constructor(private route: ActivatedRoute, private router: Router, private traineeService: TraineeService, private _snackBar: MatSnackBar) {
+  constructor( private router: Router, private traineeService: TraineeService, private _snackBar: MatSnackBar) {
   }
 
 

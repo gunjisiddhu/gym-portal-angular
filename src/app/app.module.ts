@@ -20,10 +20,8 @@ import {TraineeRegistrationComponent} from './trainee-registration/trainee-regis
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {HomePageComponent} from './home-page/home-page.component';
 import {FooterComponent} from './footer/footer.component';
 import {MatNativeDateModule} from "@angular/material/core";
-import {PractiseComponent} from './practise/practise.component';
 import {ChangePasswordComponent} from './change-password/change-password.component';
 import {MyaccountTrainerprofileComponent} from './myaccount-trainerprofile/myaccount-trainerprofile.component';
 import {UpdateTraineeProfileComponent} from './update-trainee-profile/update-trainee-profile.component';
@@ -49,6 +47,7 @@ import {TraineeNavbarComponent} from './trainee-navbar/trainee-navbar.component'
 import {TrainerNavbarComponent} from './trainer-navbar/trainer-navbar.component';
 import {HomeComponent} from './home/home.component';
 import {MatPaginatorModule} from "@angular/material/paginator";
+import {ActivatedRoute} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -59,9 +58,7 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     MyaccountStudentprofileComponent,
     JoinUsComponent,
     TraineeRegistrationComponent,
-    HomePageComponent,
     FooterComponent,
-    PractiseComponent,
     ChangePasswordComponent,
     MyaccountTrainerprofileComponent,
     UpdateTraineeProfileComponent,

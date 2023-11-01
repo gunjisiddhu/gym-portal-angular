@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Trainee} from "../trainee";
+import {Trainee} from "../models/trainee";
 import {TraineeService} from "../service/trainee.service";
 import {MatDialog} from "@angular/material/dialog";
 import {DialogBoxComponent} from "../dialog-box/dialog-box.component";

@@ -7,7 +7,6 @@ import {TraineeRegistrationComponent} from "./trainee-registration/trainee-regis
 import {MyaccountStudentprofileComponent} from "./myaccount-studentprofile/myaccount-studentprofile.component";
 import {UpdateTraineeProfileComponent} from "./update-trainee-profile/update-trainee-profile.component";
 import {ChangePasswordComponent} from "./change-password/change-password.component";
-import {HomePageComponent} from "./home-page/home-page.component";
 import {EditTrainersListComponent} from "./edit-trainers-list/edit-trainers-list.component";
 import {MyaccountTrainerprofileComponent} from "./myaccount-trainerprofile/myaccount-trainerprofile.component";
 import {TrainingComponent} from "./training/training.component";
@@ -32,7 +31,7 @@ const routes: Routes = [
   },
   {
     path: "aboutUs",
-    component: HomePageComponent
+    component: HomeComponent
   },
   {
     path: "joinUs",

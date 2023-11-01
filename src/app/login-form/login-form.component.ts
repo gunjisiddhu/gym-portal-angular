@@ -17,7 +17,7 @@ export class LoginFormComponent {
   loginForm: any;
   selectedUserType: string = 'trainee'; // Default to 'trainee'
 
-  constructor(private router: Router, private userService: UserService, private snackBar: MatSnackBar, private guardService: GuardService) {
+  constructor(private router: Router, private userService: UserService, public snackBar: MatSnackBar, private guardService: GuardService) {
     localStorage.clear();
     this.loginForm = new FormGroup({
       username: new FormControl('', Validators.required),

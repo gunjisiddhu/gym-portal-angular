@@ -62,9 +62,6 @@ export class ChangePasswordComponent {
         this._snackBar.open(error.errorMessage, "Close");
       }
     })
-
-
-    //this.router.navigate(['/myAccount']);
   }
 
 }

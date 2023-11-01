@@ -5,5 +5,5 @@ export class TraineeProfileUpdate {
   email: string | undefined;
   dateOfBirth: string | undefined;
   address: string | undefined;
-  active: string | undefined;
+  active: boolean | undefined;
 }

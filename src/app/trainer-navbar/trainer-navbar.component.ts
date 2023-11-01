@@ -14,7 +14,7 @@ export class TrainerNavbarComponent {
 
   @Input() trainerProfile: any;
 
-  constructor(private route: ActivatedRoute, private router: Router, public dialog: MatDialog) {
+  constructor( private router: Router, public dialog: MatDialog) {
   }
 
   openHome() {

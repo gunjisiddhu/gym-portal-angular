@@ -3,6 +3,4 @@ export class TrainerRegistration {
   lastName: string | undefined;
   specializationId: string | undefined;
   email: string | undefined;
-
-
 }

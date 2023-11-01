@@ -22,7 +22,7 @@ export class TrainerTrainingRequestBoxComponent {
   trainerProfile: TrainerProfile = new TrainerProfile("", "", "", "");
 
   constructor(private fb: FormBuilder, @Inject(MAT_DIALOG_DATA) public data: any, private trainerService: TrainerService, private snackBar: MatSnackBar,
-              private router: Router) {
+              public router: Router) {
     this.trainerProfile = data;
 
     this.traineesList.push(...this.trainerProfile.traineeList);

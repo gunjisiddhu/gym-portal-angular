@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {TrainerRegistration} from "../trainer-registration";
+import {TrainerRegistration} from "../models/trainer-registration";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {TrainerTrainings} from "../models/TrainerTrainings";

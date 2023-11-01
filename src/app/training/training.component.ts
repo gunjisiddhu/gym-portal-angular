@@ -64,7 +64,8 @@ export class TrainingComponent {
       this.trainingForm.value.trainingDuration
     );
 
-    training.date = formatDate(this.trainingForm.value.trainingDate, 'yyyy-MM-dd', 'en');
+    if(this.trainingForm.value.trainingDate != "")
+      training.date = formatDate(this.trainingForm.value.trainingDate, 'yyyy-MM-dd', 'en');
 
     this.trainingService.addTraining(training).subscribe({
       next: (value: any) => {
