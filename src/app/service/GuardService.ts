@@ -31,6 +31,6 @@ export class GuardService {
 
   redirectToHome() {
     localStorage.clear();
-    this.router.navigate(['']);
+    this.router.navigate(['/home']);
   }
 }

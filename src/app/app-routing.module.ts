@@ -1,20 +1,21 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {LoginFormComponent} from "./login-form/login-form.component";
-import {JoinUsComponent} from "./join-us/join-us.component";
-import {TrainerRegistrationComponent} from "./trainer-registration/trainer-registration.component";
-import {TraineeRegistrationComponent} from "./trainee-registration/trainee-registration.component";
-import {MyaccountStudentprofileComponent} from "./myaccount-studentprofile/myaccount-studentprofile.component";
-import {UpdateTraineeProfileComponent} from "./update-trainee-profile/update-trainee-profile.component";
-import {ChangePasswordComponent} from "./change-password/change-password.component";
-import {EditTrainersListComponent} from "./edit-trainers-list/edit-trainers-list.component";
-import {MyaccountTrainerprofileComponent} from "./myaccount-trainerprofile/myaccount-trainerprofile.component";
-import {TrainingComponent} from "./training/training.component";
-import {TrainingsDisplayComponent} from "./trainings-display/trainings-display.component";
-import {TrainerProfileUpdateComponent} from "./trainer-profile-update/trainer-profile-update.component";
-import {HomeComponent} from "./home/home.component";
-import {traineeGuard} from "./shared/trainee.guard";
-import {trainerGuard} from "./shared/trainer.guard";
+import {LoginFormComponent} from "./user-module/login-form/login-form.component";
+import {JoinUsComponent} from "./user-module/join-us/join-us.component";
+import {TrainerRegistrationComponent} from "./user-module/trainer-registration/trainer-registration.component";
+import {TraineeRegistrationComponent} from "./user-module/trainee-registration/trainee-registration.component";
+import {MyaccountStudentprofileComponent} from "./trainee-module/myaccount-studentprofile/myaccount-studentprofile.component";
+import {UpdateTraineeProfileComponent} from "./trainee-module/update-trainee-profile/update-trainee-profile.component";
+import {ChangePasswordComponent} from "./shared-module/change-password/change-password.component";
+import {EditTrainersListComponent} from "./trainee-module/edit-trainers-list/edit-trainers-list.component";
+import {MyaccountTrainerprofileComponent} from "./trainer-module/myaccount-trainerprofile/myaccount-trainerprofile.component";
+import {TrainingComponent} from "./trainer-module/training/training.component";
+import {TrainingsDisplayComponent} from "./shared-module/trainings-display/trainings-display.component";
+import {TrainerProfileUpdateComponent} from "./trainer-module/trainer-profile-update/trainer-profile-update.component";
+import {HomeComponent} from "./user-module/home/home.component";
+import {traineeGuard} from "./route-gaurd/trainee.guard";
+import {trainerGuard} from "./route-gaurd/trainer.guard";
+import {authGuard} from "./route-gaurd/auth.guard";
 
 const routes: Routes = [
   {
@@ -24,71 +25,24 @@ const routes: Routes = [
   },
   {
     path: "home",
-    component: HomeComponent,
-  }, {
-    path: "signIn",
-    component: LoginFormComponent
+    loadChildren: () => import("src/app/user-module/user-module.module").then(value => value.UserModuleModule),
   },
   {
-    path: "aboutUs",
-    component: HomeComponent
+    path: "commons",
+    loadChildren: () => import("src/app/shared-module/shared-module.module").then(value => value.SharedModuleModule),
+    canActivate:[authGuard]
   },
   {
-    path: "joinUs",
-    component: JoinUsComponent
+    path: "trainee",
+    loadChildren: () => import("src/app/trainee-module/trainee-module.module").then(value => value.TraineeModuleModule),
+    canActivate:[traineeGuard]
   },
-  {
-    path: "trainerRegistration",
-    component: TrainerRegistrationComponent
-  },
-  {
-    path: "traineeRegistration",
-    component: TraineeRegistrationComponent,
-  },
-  {
-    path: "myAccount",
-    component: MyaccountStudentprofileComponent,
-    canActivate: [traineeGuard]
-  },
-  {
-    path: "trainerAccount",
-    component: MyaccountTrainerprofileComponent,
-    canActivate: [trainerGuard]
-  },
-  {
-    path: "editTraineeProfile",
-    component: UpdateTraineeProfileComponent,
-    canActivate: [traineeGuard]
-  },
-  {
-    path: "changePassword",
-    component: ChangePasswordComponent
-  },
-  {
-    path: "editTrainersList",
-    component: EditTrainersListComponent,
-    canActivate: [traineeGuard]
-  },
-  {
-    path: "addTraining",
-    component: TrainingComponent,
-    canActivate: [trainerGuard]
-  },
-  {
-    path: "trainingDisplay",
-    component: TrainingsDisplayComponent
-  },
-  {
-    path: "updateTraineeProfile",
-    component: UpdateTraineeProfileComponent,
-    canActivate: [traineeGuard]
-  },
-  {
-    path: "updateTrainerProfile",
-    component: TrainerProfileUpdateComponent,
-    canActivate: [trainerGuard]
-  }
 
+  {
+    path: "trainer",
+    loadChildren: () => import("src/app/trainer-module/trainer-module.module").then(value => value.TrainerModuleModule),
+    canActivate:[trainerGuard]
+  },
 ];
 
 @NgModule({
